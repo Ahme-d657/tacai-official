@@ -3,210 +3,562 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAÇ AI | Otonom Kurumsal Yapay Zeka Sistemleri & VIP Danışmanlık</title>
-    <!-- Tailwind CSS CDN -->
+
+    <title>TAÇ AI | Yapay Zekâ ile Her İşinde Yanında</title>
+    <meta name="description" content="TAÇ AI, eğitimden iş hayatına, içerikten teknolojiye kadar her konuda yapay zekâ destekli çözümler sunar.">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030712;
+            background:
+                radial-gradient(circle at 50% -10%, rgba(99,102,241,.18), transparent 35%),
+                #030712;
             color: #f8fafc;
         }
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+
+        .glass {
+            background: rgba(15, 23, 42, .65);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255,255,255,.08);
         }
-        .glow-effect {
-            box-shadow: 0 0 50px -12px rgba(99, 102, 241, 0.25);
+
+        .gradient-text {
+            background: linear-gradient(90deg,#fcd34d,#818cf8,#c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-glow {
+            box-shadow: 0 0 100px rgba(99,102,241,.12);
+        }
+
+        .card {
+            transition: .25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(129,140,248,.35);
+        }
+
+        textarea {
+            resize: none;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-amber-500 selection:text-black">
 
-    <!-- VIP Navbar -->
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-amber-500/20">
-                    <i data-lucide="crown" class="w-5 h-5 text-amber-300"></i>
-                </div>
-                <span class="font-extrabold text-xl tracking-wider bg-gradient-to-r from-white via-slate-200 to-amber-300 bg-clip-text text-transparent">
-                    TAÇ AI
-                </span>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+
+        <a href="#" class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 via-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+                <i data-lucide="crown" class="w-5 h-5 text-white"></i>
             </div>
-            <a href="#contact" class="px-5 py-2.5 text-xs font-bold rounded-xl bg-gradient-to-r from-amber-500 via-indigo-600 to-purple-600 hover:opacity-90 text-white transition shadow-lg shadow-indigo-600/30">
-                VIP Danışmanlık Al
-            </a>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 max-w-5xl mx-auto text-center relative">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-        
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold mb-8 backdrop-blur-md">
-            <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 animate-pulse"></i>
-            Taç AI Otonom Ajan Mimarisi v3.0 Aktif
+            <span class="font-extrabold text-xl tracking-wide gradient-text">
+                TAÇ AI
+            </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-7 text-sm text-slate-400">
+            <a href="#asistan" class="hover:text-white transition">AI Asistan</a>
+            <a href="#hizmetler" class="hover:text-white transition">Hizmetler</a>
+            <a href="#hakkimizda" class="hover:text-white transition">Hakkımızda</a>
         </div>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent leading-tight">
-            Şirketinizin Operasyonlarını <br />
-            <span class="bg-gradient-to-r from-amber-300 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Otonom AI Ajanlarına
-            </span> Devredin
+
+        <a href="#asistan"
+           class="px-4 py-2 rounded-xl bg-white text-slate-950 text-xs font-bold hover:bg-slate-200 transition">
+            Hemen Başla
+        </a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="relative pt-36 pb-20 px-5 overflow-hidden">
+
+    <div class="absolute left-1/2 top-20 -translate-x-1/2
+                w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none">
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center relative">
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                    border border-indigo-500/30 bg-indigo-500/10
+                    text-indigo-300 text-xs font-semibold mb-7">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            Yapay zekânın yeni nesli
+        </div>
+
+        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight">
+            Yapay zekâ ile
+            <br>
+            <span class="gradient-text">her işinde yanında.</span>
         </h1>
-        
-        <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            Özel RAG bilgi bankaları, bağımsız çalışan yapay zeka ekipleri ve yüksek güvenlikli kurumsal LLM entegrasyonları ile Taç AI kalitesi.
+
+        <p class="max-w-2xl mx-auto mt-6 text-slate-400 text-base md:text-lg leading-relaxed">
+            TAÇ AI; eğitimden iş hayatına, içerik üretiminden teknolojiye
+            kadar birçok konuda sana yardımcı olan yapay zekâ platformudur.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#playground" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white text-slate-950 font-bold text-sm hover:bg-slate-200 transition flex items-center justify-center gap-2">
-                Sistemi Test Et <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        <div class="mt-9 flex flex-col sm:flex-row justify-center gap-3">
+
+            <a href="#asistan"
+               class="px-7 py-3.5 rounded-xl bg-white text-slate-950
+                      font-bold text-sm hover:bg-slate-200 transition">
+                TAÇ AI'ı Kullan
             </a>
-            <a href="#roi" class="w-full sm:w-auto px-8 py-3.5 rounded-xl glass-panel text-slate-300 font-semibold text-sm hover:bg-slate-800/50 transition">
-                Tasarruf Hesapla
+
+            <a href="#hizmetler"
+               class="px-7 py-3.5 rounded-xl glass text-slate-200
+                      font-semibold text-sm hover:bg-slate-800 transition">
+                Neler Yapabilir?
             </a>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Grid -->
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-8 rounded-2xl glass-panel hover:border-amber-500/40 transition group">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition">
-                    <i data-lucide="database" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-3">Özel Kurumsal RAG</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Şirketinizin tüm PDF, Excel ve dokümanlarını güvenli bir yapay zeka bilgi bankasına dönüştürüyoruz.</p>
+
+<!-- AI ASISTAN -->
+<section id="asistan" class="px-5 py-16">
+
+    <div class="max-w-4xl mx-auto">
+
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl
+                        bg-indigo-500/10 border border-indigo-500/20 mb-4">
+                <i data-lucide="bot" class="w-6 h-6 text-indigo-400"></i>
             </div>
 
-            <div class="p-8 rounded-2xl glass-panel hover:border-indigo-500/40 transition group">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition">
-                    <i data-lucide="bot" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-3">Çoklu Otonom Ajanlar</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Birbiriyle iletişim kurarak analiz yapan, e-posta gönderen ve rapor üreten AI ekipleri.</p>
-            </div>
+            <h2 class="text-2xl md:text-3xl font-bold">
+                TAÇ AI Asistan
+            </h2>
 
-            <div class="p-8 rounded-2xl glass-panel hover:border-purple-500/40 transition group">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition">
-                    <i data-lucide="shield-check" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-3">VIP İş Akışı Otomasyonu</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Süreçlerinizdeki tekrarlayan rutin işleri %100 otonom hale getirip hata payını sıfırlıyoruz.</p>
-            </div>
+            <p class="text-slate-400 text-sm mt-2">
+                Ne yapmak istediğini yaz. TAÇ AI sana yardımcı olsun.
+            </p>
         </div>
-    </section>
 
-    <!-- Interactive ROI Calculator -->
-    <section id="roi" class="py-12 px-6 max-w-4xl mx-auto">
-        <div class="p-8 rounded-3xl glass-panel glow-effect relative overflow-hidden">
-            <div class="flex items-center gap-3 mb-8">
-                <i data-lucide="bar-chart-3" class="w-6 h-6 text-amber-400"></i>
-                <h2 class="text-xl font-bold text-white">Yatırım Getirisi (ROI) Hesaplayıcı</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-6">
-                    <div>
-                        <div class="flex justify-between text-xs text-slate-400 mb-2">
-                            <span>Ekip Büyüklüğü</span>
-                            <span id="teamSizeVal" class="text-amber-400 font-bold">25 Kişi</span>
-                        </div>
-                        <input type="range" id="teamSize" min="5" max="250" value="25" class="w-full accent-amber-500 bg-slate-800 rounded-lg cursor-pointer">
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-xs text-slate-400 mb-2">
-                            <span>Ortalama Saatlik Maliyet</span>
-                            <span id="hourlyRateVal" class="text-indigo-400 font-bold">$45/saat</span>
-                        </div>
-                        <input type="range" id="hourlyRate" min="15" max="150" value="45" class="w-full accent-indigo-500 bg-slate-800 rounded-lg cursor-pointer">
-                    </div>
-                </div>
 
-                <div class="p-6 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-center">
-                    <div class="text-xs text-indigo-300 font-medium mb-2">Tahmini Yıllık Tasarruf Potansiyeli</div>
-                    <div id="annualSavings" class="text-3xl md:text-4xl font-black text-amber-400">$234,000</div>
-                    <div class="text-[10px] text-slate-400 mt-2">*Taç AI Otonom Ajan Entegrasyonu İle %40 Verimlilik Artışı Baz Alınmıştır.</div>
-                </div>
+        <div class="glass rounded-3xl p-4 md:p-6 hero-glow">
+
+            <div class="flex items-center gap-2 mb-4 text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                TAÇ AI hazır
             </div>
+
+            <textarea
+                id="aiPrompt"
+                rows="4"
+                placeholder="Örneğin: Bana 7 günlük ders çalışma planı hazırla..."
+                class="w-full bg-slate-950/80 border border-slate-800
+                       rounded-2xl p-4 text-sm text-slate-200
+                       placeholder:text-slate-600
+                       focus:outline-none focus:border-indigo-500 transition"></textarea>
+
+            <div class="flex flex-col sm:flex-row gap-3 mt-3">
+
+                <button
+                    onclick="askTacAI()"
+                    id="askButton"
+                    class="flex-1 py-3.5 rounded-xl
+                           bg-gradient-to-r from-indigo-500 to-purple-600
+                           hover:opacity-90 transition font-bold text-sm
+                           flex items-center justify-center gap-2">
+
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    TAÇ AI'ya Sor
+                </button>
+
+                <button
+                    onclick="clearAI()"
+                    class="sm:w-32 py-3.5 rounded-xl glass
+                           text-slate-400 hover:text-white transition text-sm">
+                    Temizle
+                </button>
+
+            </div>
+
+            <div id="aiOutput"
+                 class="hidden mt-5 p-5 rounded-2xl
+                        bg-slate-950 border border-indigo-500/20
+                        text-sm text-slate-300 leading-relaxed">
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- AI Playground Terminal -->
-    <section id="playground" class="py-12 px-6 max-w-3xl mx-auto">
-        <div class="p-6 rounded-2xl glass-panel">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="cpu" class="w-5 h-5 text-indigo-400"></i>
-                    <h3 class="font-bold text-sm text-white">Taç AI Otonom Terminal</h3>
+
+<!-- HIZMETLER -->
+<section id="hizmetler" class="py-20 px-5">
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-12">
+            <p class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-3">
+                TAÇ AI
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-extrabold">
+                Birçok konuda yardım al
+            </h2>
+
+            <p class="text-slate-400 mt-3 max-w-xl mx-auto text-sm">
+                İhtiyacını seç ve TAÇ AI ile çalışmaya başla.
+            </p>
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- KART -->
+            <div onclick="setPrompt('Bir konuda bana yardımcı ol')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-indigo-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="bot" class="w-5 h-5 text-indigo-400"></i>
                 </div>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Sistem Hazır</span>
+
+                <h3 class="font-bold mb-2">AI Asistan</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Sorularını sor, fikirlerini geliştir ve yardım al.
+                </p>
             </div>
 
-            <input type="text" id="aiPrompt" placeholder="Örn: 'Destek ekibi için otomasyon senaryosu çıkar...'" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-sm mb-3 text-slate-200 focus:outline-none focus:border-amber-500 transition">
-            
-            <button onclick="runAiSimulation()" id="aiBtn" class="w-full bg-gradient-to-r from-amber-500 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-bold py-3 rounded-xl transition text-sm flex items-center justify-center gap-2">
-                <span>Simülasyonu Başlat</span>
-            </button>
 
-            <div id="aiOutput" class="hidden mt-4 p-4 rounded-xl bg-slate-950 border border-amber-500/30 text-xs text-amber-300 font-mono leading-relaxed"></div>
+            <div onclick="setPrompt('Instagram için dikkat çekici bir içerik fikri üret')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-purple-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="pen-tool" class="w-5 h-5 text-purple-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">İçerik Üretimi</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Gönderi, Reels, video ve sosyal medya fikirleri oluştur.
+                </p>
+            </div>
+
+
+            <div onclick="setPrompt('Bugün çalışmam için bana etkili bir ders planı hazırla')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">Eğitim</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Ders çalışma, konu anlatımı ve öğrenme desteği.
+                </p>
+            </div>
+
+
+            <div onclick="setPrompt('Yeni bir iş fikri geliştirmeme yardım et')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="briefcase-business" class="w-5 h-5 text-amber-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">İş & Girişim</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    İş fikirleri, planlama ve dijital girişim desteği.
+                </p>
+            </div>
+
+
+            <div onclick="setPrompt('Bir logo ve marka konsepti için yaratıcı fikirler üret')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-pink-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="palette" class="w-5 h-5 text-pink-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">Yaratıcı Fikirler</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Marka, tasarım, video ve yaratıcı proje fikirleri.
+                </p>
+            </div>
+
+
+            <div onclick="setPrompt('Bu metni daha profesyonel ve anlaşılır şekilde düzenle')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-cyan-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="file-text" class="w-5 h-5 text-cyan-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">Yazı & Belge</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Metin yaz, düzenle, özetle ve daha anlaşılır hale getir.
+                </p>
+            </div>
+
+
+            <div onclick="setPrompt('Bana bir web sitesi projesi için fikir ve plan hazırla')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-blue-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="code-2" class="w-5 h-5 text-blue-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">Teknoloji</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Kodlama, web sitesi ve teknoloji projelerinde destek.
+                </p>
+            </div>
+
+
+            <div onclick="setPrompt('Bugün hayatımı daha düzenli hale getirmek için bir plan oluştur')"
+                 class="card cursor-pointer glass rounded-2xl p-6">
+
+                <div class="w-11 h-11 rounded-xl bg-rose-500/10
+                            flex items-center justify-center mb-5">
+                    <i data-lucide="calendar-check" class="w-5 h-5 text-rose-400"></i>
+                </div>
+
+                <h3 class="font-bold mb-2">Günlük Yaşam</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Planlama, organizasyon ve günlük işlerde yardım.
+                </p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer id="contact" class="border-t border-slate-800/80 py-12 px-6 text-center text-slate-500 text-xs">
-        <p>© 2026 TAÇ AI VIP Agency. Tüm hakları saklıdır.</p>
-    </footer>
 
-    <!-- Scripts -->
-    <script>
+<!-- HAKKIMIZDA -->
+<section id="hakkimizda" class="py-20 px-5">
+
+    <div class="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 text-center">
+
+        <div class="w-14 h-14 mx-auto rounded-2xl
+                    bg-gradient-to-br from-amber-400 via-indigo-500 to-purple-600
+                    flex items-center justify-center mb-6">
+
+            <i data-lucide="crown" class="w-7 h-7 text-white"></i>
+
+        </div>
+
+        <h2 class="text-3xl font-extrabold mb-5">
+            TAÇ AI nedir?
+        </h2>
+
+        <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
+            TAÇ AI, yapay zekâ teknolojilerini herkes için daha
+            anlaşılır ve kullanılabilir hale getirmeyi amaçlayan
+            bir dijital AI ajansıdır.
+            <br><br>
+            Amacımız; insanların fikirlerini geliştirmesine,
+            öğrenmesine, üretmesine ve dijital dünyada daha hızlı
+            ilerlemesine yardımcı olmaktır.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-20 px-5">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+        <h2 class="text-3xl md:text-5xl font-extrabold">
+            Fikrini söyle.
+            <span class="gradient-text">TAÇ AI yardımcı olsun.</span>
+        </h2>
+
+        <p class="text-slate-400 mt-5 mb-8 text-sm">
+            Bir soru, fikir veya proje ile başlayabilirsin.
+        </p>
+
+        <a href="#asistan"
+           class="inline-flex items-center gap-2 px-8 py-4
+                  rounded-xl bg-white text-slate-950
+                  font-bold hover:bg-slate-200 transition">
+
+            Başlayalım
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+
+        </a>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800/70 py-10 px-5">
+
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row
+                justify-between items-center gap-4">
+
+        <div class="flex items-center gap-2">
+
+            <div class="w-8 h-8 rounded-lg
+                        bg-gradient-to-br from-amber-400 to-purple-600
+                        flex items-center justify-center">
+
+                <i data-lucide="crown" class="w-4 h-4 text-white"></i>
+
+            </div>
+
+            <span class="font-bold">TAÇ AI</span>
+
+        </div>
+
+        <p class="text-xs text-slate-500">
+            © 2026 TAÇ AI. Tüm hakları saklıdır.
+        </p>
+
+    </div>
+</footer>
+
+
+<script>
+
+    lucide.createIcons();
+
+
+    function setPrompt(text) {
+
+        const input = document.getElementById("aiPrompt");
+
+        input.value = text;
+
+        document.getElementById("asistan")
+            .scrollIntoView({ behavior: "smooth" });
+
+        setTimeout(() => input.focus(), 500);
+    }
+
+
+    function clearAI() {
+
+        document.getElementById("aiPrompt").value = "";
+
+        const output = document.getElementById("aiOutput");
+
+        output.classList.add("hidden");
+        output.innerHTML = "";
+
+    }
+
+
+    function askTacAI() {
+
+        const input = document.getElementById("aiPrompt");
+        const button = document.getElementById("askButton");
+        const output = document.getElementById("aiOutput");
+
+        const prompt = input.value.trim();
+
+        if (!prompt) {
+
+            input.focus();
+            return;
+
+        }
+
+
+        /*
+         * Şimdilik demo cevap.
+         *
+         * Gerçek AI bağlantısı için buraya güvenli
+         * backend/API bağlantısı eklenecek.
+         */
+
+        button.disabled = true;
+
+        button.innerHTML =
+            '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> TAÇ AI düşünüyor...';
+
         lucide.createIcons();
 
-        // ROI Calculator Logic
-        const teamSize = document.getElementById('teamSize');
-        const hourlyRate = document.getElementById('hourlyRate');
-        const teamSizeVal = document.getElementById('teamSizeVal');
-        const hourlyRateVal = document.getElementById('hourlyRateVal');
-        const annualSavings = document.getElementById('annualSavings');
+        output.classList.add("hidden");
 
-        function updateROI() {
-            const size = parseInt(teamSize.value);
-            const rate = parseInt(hourlyRate.value);
-            teamSizeVal.innerText = size + ' Kişi';
-            hourlyRateVal.innerText = '$' + rate + '/saat';
-            
-            const savings = Math.round(size * 12 * rate * 52 * 0.4);
-            annualSavings.innerText = '$' + savings.toLocaleString();
-        }
 
-        teamSize.addEventListener('input', updateROI);
-        hourlyRate.addEventListener('input', updateROI);
+        setTimeout(() => {
 
-        // AI Terminal Logic
-        function runAiSimulation() {
-            const prompt = document.getElementById('aiPrompt').value;
-            const output = document.getElementById('aiOutput');
-            const btn = document.getElementById('aiBtn');
+            output.innerHTML = `
+                <div class="flex gap-3">
 
-            if (!prompt) return;
+                    <div class="w-8 h-8 shrink-0 rounded-lg
+                                bg-indigo-500/10
+                                flex items-center justify-center">
 
-            btn.disabled = true;
-            btn.innerText = 'Taç AI Ajanları Analiz Ediyor...';
-            output.classList.add('hidden');
+                        <i data-lucide="bot"
+                           class="w-4 h-4 text-indigo-400"></i>
 
-            setTimeout(() => {
-                output.innerText = `[Taç AI Otonom Ajan Yanıtı]: "${prompt}" görevi alındı. 3 farklı otonom ajan iş akışına bağlandı, verimlilik %100 seviyesine çıkarıldı.`;
-                output.classList.remove('hidden');
-                btn.disabled = false;
-                btn.innerText = 'Simülasyonu Başlat';
-            }, 1000);
-        }
-    </script>
+                    </div>
+
+                    <div>
+                        <div class="font-semibold text-white mb-2">
+                            TAÇ AI
+                        </div>
+
+                        <p>
+                            İsteğini aldım:
+                            <span class="text-indigo-300">
+                                "${escapeHtml(prompt)}"
+                            </span>
+                        </p>
+
+                        <p class="mt-3 text-slate-500 text-xs">
+                            Bu bölüm şu anda demo modunda.
+                            Gerçek yapay zekâ bağlantısı
+                            eklendiğinde TAÇ AI burada gerçek
+                            yanıtlar üretecek.
+                        </p>
+                    </div>
+
+                </div>
+            `;
+
+            output.classList.remove("hidden");
+
+            button.disabled = false;
+
+            button.innerHTML =
+                '<i data-lucide="send" class="w-4 h-4"></i> TAÇ AI’ya Sor';
+
+            lucide.createIcons();
+
+        }, 900);
+
+    }
+
+
+    function escapeHtml(text) {
+
+        const div = document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+</script>
+
 </body>
 </html>
