@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TAÇ AI | Yapay Zekâ ile Her İşinde Yanında</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: #030712;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, #fbbf24, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255,255,255,.08);
+            backdrop-filter: blur(15px);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+
+        <div class="font-extrabold text-xl gradient">
+            👑 TAÇ AI
+        </div>
+
+        <a href="#asistan"
+           class="bg-white text-black px-4 py-2 rounded-xl text-sm font-bold">
+            Başla
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="pt-36 pb-20 px-5 text-center">
+
+    <div class="max-w-4xl mx-auto">
+
+        <div class="inline-block px-4 py-2 rounded-full
+                    bg-indigo-500/10 border border-indigo-500/30
+                    text-indigo-300 text-sm mb-6">
+
+            ✨ Yapay zekânın yeni nesli
+
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+
+            Yapay zekâ ile
+
+            <span class="gradient">
+                her işinde yanında.
+            </span>
+
+        </h1>
+
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mt-6">
+
+            TAÇ AI; eğitimden iş hayatına, içerik üretiminden
+            teknolojiye kadar birçok konuda sana yardımcı olur.
+
+        </p>
+
+        <a href="#asistan"
+           class="inline-block mt-8 bg-white text-black
+                  px-8 py-4 rounded-xl font-bold">
+
+            TAÇ AI'ı Kullan 🚀
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- AI ASISTAN -->
+<section id="asistan" class="px-5 py-16">
+
+    <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-8">
+
+            <div class="text-4xl mb-3">
+                🤖
+            </div>
+
+            <h2 class="text-3xl font-bold">
+                TAÇ AI Asistan
+            </h2>
+
+            <p class="text-slate-400 mt-2">
+                Sorunu yaz, TAÇ AI cevaplasın.
+            </p>
+
+        </div>
+
+
+        <div class="glass rounded-3xl p-5">
+
+            <textarea
+                id="aiPrompt"
+                rows="5"
+                placeholder="Örneğin: Bana 7 günlük ders çalışma planı hazırla..."
+                class="w-full bg-slate-950 border border-slate-800
+                       rounded-2xl p-4 text-white
+                       outline-none focus:border-indigo-500">
+            </textarea>
+
+
+            <button
+                id="askButton"
+                onclick="askTacAI()"
+                class="w-full mt-4 py-4 rounded-xl
+                       bg-gradient-to-r from-indigo-500 to-purple-600
+                       font-bold">
+
+                🚀 TAÇ AI'ya Sor
+
+            </button>
+
+
+            <button
+                onclick="clearAI()"
+                class="w-full mt-3 py-3 rounded-xl
+                       bg-slate-800 text-slate-300">
+
+                Temizle
+
+            </button>
+
+
+            <div
+                id="aiOutput"
+                class="hidden mt-5 p-5 rounded-2xl
+                       bg-slate-950 border border-indigo-500/20
+                       leading-relaxed">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HİZMETLER -->
+<section class="px-5 py-20">
+
+    <div class="max-w-6xl mx-auto">
+
+        <h2 class="text-3xl font-bold text-center mb-10">
+            TAÇ AI neler yapabilir?
+        </h2>
+
+
+        <div class="grid md:grid-cols-4 gap-4">
+
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-4">🤖</div>
+                <h3 class="font-bold">AI Asistan</h3>
+                <p class="text-sm text-slate-400 mt-2">
+                    Sorularına cevap al ve fikirlerini geliştir.
+                </p>
+            </div>
+
+
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-4">✍️</div>
+                <h3 class="font-bold">İçerik Üretimi</h3>
+                <p class="text-sm text-slate-400 mt-2">
+                    Sosyal medya, video ve içerik fikirleri oluştur.
+                </p>
+            </div>
+
+
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-4">📚</div>
+                <h3 class="font-bold">Eğitim</h3>
+                <p class="text-sm text-slate-400 mt-2">
+                    Ders çalışma ve öğrenme konusunda yardım al.
+                </p>
+            </div>
+
+
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-4">💼</div>
+                <h3 class="font-bold">İş & Girişim</h3>
+                <p class="text-sm text-slate-400 mt-2">
+                    İş fikirleri ve projeler geliştir.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HAKKIMIZDA -->
+<section class="px-5 py-20">
+
+    <div class="max-w-3xl mx-auto text-center glass rounded-3xl p-10">
+
+        <div class="text-5xl mb-5">
+            👑
+        </div>
+
+        <h2 class="text-3xl font-bold">
+            TAÇ AI nedir?
+        </h2>
+
+        <p class="text-slate-400 mt-5 leading-relaxed">
+
+            TAÇ AI, yapay zekâyı herkes için daha kolay,
+            anlaşılır ve kullanılabilir hale getirmeyi amaçlayan
+            bir yapay zekâ platformudur.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 py-8 text-center">
+
+    <p class="font-bold gradient">
+        👑 TAÇ AI
+    </p>
+
+    <p class="text-slate-500 text-sm mt-2">
+        © 2026 TAÇ AI
+    </p>
+
+</footer>
+
+
+<script>
+
+async function askTacAI() {
+
+    const input = document.getElementById("aiPrompt");
+    const button = document.getElementById("askButton");
+    const output = document.getElementById("aiOutput");
+
+    const message = input.value.trim();
+
+    if (!message) {
+        input.focus();
+        return;
+    }
+
+    button.disabled = true;
+    button.innerText = "⏳ TAÇ AI düşünüyor...";
+
+    output.classList.remove("hidden");
+
+    output.innerHTML = `
+        <div class="text-slate-400">
+            TAÇ AI düşünüyor...
+        </div>
+    `;
+
+    try {
+
+        const response = await fetch("/api/chat", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                message: message
+            })
+
+        });
+
+
+        const data = await response.json();
+
+
+        if (!response.ok) {
+            throw new Error(data.error || "Bir hata oluştu.");
+        }
+
+
+        output.innerHTML = `
+            <div>
+
+                <div class="font-bold text-indigo-400 mb-3">
+                    🤖 TAÇ AI
+                </div>
+
+                <div class="whitespace-pre-wrap">
+                    ${escapeHtml(data.reply)}
+                </div>
+
+            </div>
+        `;
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        output.innerHTML = `
+            <div class="text-red-400">
+                ❌ TAÇ AI şu anda cevap veremiyor.
+                Lütfen biraz sonra tekrar dene.
+            </div>
+        `;
+
+    }
+
+
+    button.disabled = false;
+    button.innerText = "🚀 TAÇ AI'ya Sor";
+
+}
+
+
+function clearAI() {
+
+    document.getElementById("aiPrompt").value = "";
+
+    const output = document.getElementById("aiOutput");
+
+    output.classList.add("hidden");
+
+    output.innerHTML = "";
+
+}
+
+
+function escapeHtml(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+</script>
+
+</body>
+</html>
